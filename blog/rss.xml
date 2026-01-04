@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>My Site Blog</title>
-        <link>https://MarchM87.github.io/my-knowledge/blog</link>
+        <link>https://marchinm87.github.io/my-knowledge/blog</link>
         <description>My Site Blog</description>
         <lastBuildDate>Sun, 04 Jan 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,14 +10,14 @@
         <language>en</language>
         <item>
             <title><![CDATA[My First Unreal & C++ Blog]]></title>
-            <link>https://MarchM87.github.io/my-knowledge/blog/2026/01/04/my-first-blog</link>
-            <guid>https://MarchM87.github.io/my-knowledge/blog/2026/01/04/my-first-blog</guid>
+            <link>https://marchinm87.github.io/my-knowledge/blog/2026/01/04/my-first-blog</link>
+            <guid>https://marchinm87.github.io/my-knowledge/blog/2026/01/04/my-first-blog</guid>
             <pubDate>Sun, 04 Jan 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[今天我开始记录我的第一个博客，我将分享 Unreal Engine 5 与 C++ 的一些基础知识。]]></description>
             <content:encoded><![CDATA[<p>今天我开始记录我的第一个博客，我将分享 Unreal Engine 5 与 C++ 的一些基础知识。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么使用-c-做游戏引擎">为什么使用 C++ 做游戏引擎<a href="https://marchm87.github.io/my-knowledge/blog/2026/01/04/my-first-blog#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-c-%E5%81%9A%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E" class="hash-link" aria-label="Direct link to 为什么使用 C++ 做游戏引擎" title="Direct link to 为什么使用 C++ 做游戏引擎" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么使用-c-做游戏引擎">为什么使用 C++ 做游戏引擎<a href="https://marchinm87.github.io/my-knowledge/blog/2026/01/04/my-first-blog#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-c-%E5%81%9A%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E" class="hash-link" aria-label="Direct link to 为什么使用 C++ 做游戏引擎" title="Direct link to 为什么使用 C++ 做游戏引擎" translate="no">​</a></h2>
 <p>C++ 提供了高性能和灵活性，这是游戏引擎开发的核心。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="unreal-engine-5-的特点">Unreal Engine 5 的特点<a href="https://marchm87.github.io/my-knowledge/blog/2026/01/04/my-first-blog#unreal-engine-5-%E7%9A%84%E7%89%B9%E7%82%B9" class="hash-link" aria-label="Direct link to Unreal Engine 5 的特点" title="Direct link to Unreal Engine 5 的特点" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="unreal-engine-5-的特点">Unreal Engine 5 的特点<a href="https://marchinm87.github.io/my-knowledge/blog/2026/01/04/my-first-blog#unreal-engine-5-%E7%9A%84%E7%89%B9%E7%82%B9" class="hash-link" aria-label="Direct link to Unreal Engine 5 的特点" title="Direct link to Unreal Engine 5 的特点" translate="no">​</a></h2>
 <ul>
 <li class="">高性能渲染</li>
 <li class="">蓝图系统</li>
@@ -30,8 +30,8 @@
         </item>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://MarchM87.github.io/my-knowledge/blog/welcome</link>
-            <guid>https://MarchM87.github.io/my-knowledge/blog/welcome</guid>
+            <link>https://marchinm87.github.io/my-knowledge/blog/welcome</link>
+            <guid>https://marchinm87.github.io/my-knowledge/blog/welcome</guid>
             <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>
             <content:encoded><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer" class="">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer" class="">blog plugin</a>.</p>
@@ -44,7 +44,7 @@
 <li class=""><code>2019-05-30-welcome/index.md</code></li>
 </ul>
 <p>A blog post folder can be convenient to co-locate blog post images:</p>
-<p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="https://marchm87.github.io/my-knowledge/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="https://marchinm87.github.io/my-knowledge/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
 <p>The blog supports tags as well!</p>
 <p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content:encoded>
             <category>Facebook</category>
@@ -53,8 +53,8 @@
         </item>
         <item>
             <title><![CDATA[MDX Blog Post]]></title>
-            <link>https://MarchM87.github.io/my-knowledge/blog/mdx-blog-post</link>
-            <guid>https://MarchM87.github.io/my-knowledge/blog/mdx-blog-post</guid>
+            <link>https://marchinm87.github.io/my-knowledge/blog/mdx-blog-post</link>
+            <guid>https://marchinm87.github.io/my-knowledge/blog/mdx-blog-post</guid>
             <pubDate>Sun, 01 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></description>
             <content:encoded><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer" class="">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer" class="">MDX</a>.</p>
@@ -67,8 +67,8 @@
         </item>
         <item>
             <title><![CDATA[Long Blog Post]]></title>
-            <link>https://MarchM87.github.io/my-knowledge/blog/long-blog-post</link>
-            <guid>https://MarchM87.github.io/my-knowledge/blog/long-blog-post</guid>
+            <link>https://marchinm87.github.io/my-knowledge/blog/long-blog-post</link>
+            <guid>https://marchinm87.github.io/my-knowledge/blog/long-blog-post</guid>
             <pubDate>Wed, 29 May 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[This is the summary of a very long blog post,]]></description>
             <content:encoded><![CDATA[<p>This is the summary of a very long blog post,</p>
@@ -94,8 +94,8 @@
         </item>
         <item>
             <title><![CDATA[First Blog Post]]></title>
-            <link>https://MarchM87.github.io/my-knowledge/blog/first-blog-post</link>
-            <guid>https://MarchM87.github.io/my-knowledge/blog/first-blog-post</guid>
+            <link>https://marchinm87.github.io/my-knowledge/blog/first-blog-post</link>
+            <guid>https://marchinm87.github.io/my-knowledge/blog/first-blog-post</guid>
             <pubDate>Tue, 28 May 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[Lorem ipsum dolor sit amet...]]></description>
             <content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
