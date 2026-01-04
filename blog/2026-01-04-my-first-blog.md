@@ -1,10 +1,12 @@
 ---
 title: ZNotes
 authors: [Yiyong]
-tags: [C++, Unreal Engine, Simulation]
+tags: [cpp, unreal-engine, simulation]
 ---
 
 ZNotes is not a blog in the traditional sense.
+
+<!-- truncate -->
 
 It is a continuously evolving engineering notebook that documents how real C++ and Unreal Engine systems are designed, structured, and maintained.
 

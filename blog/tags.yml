@@ -52,3 +52,48 @@ simulation:
   label: Simulation
   permalink: /simulation
   description: Simulation systems and techniques
+
+raii:
+  label: RAII
+  permalink: /raii
+  description: Resource Acquisition Is Initialization
+
+thread-safe:
+  label: Thread Safe
+  permalink: /thread-safe
+  description: Thread safety and concurrency
+
+smart-pointer:
+  label: Smart Pointer
+  permalink: /smart-pointer
+  description: Modern C++ smart pointers
+
+singleton:
+  label: Singleton
+  permalink: /singleton
+  description: Singleton design pattern
+
+gas:
+  label: GAS
+  permalink: /gas
+  description: Gameplay Ability System
+
+gameplay:
+  label: Gameplay
+  permalink: /gameplay
+  description: Gameplay systems and mechanics
+
+ue5:
+  label: UE5
+  permalink: /ue5
+  description: Unreal Engine 5
+
+pattern:
+  label: Pattern
+  permalink: /pattern
+  description: Code patterns and best practices
+
+template:
+  label: Template
+  permalink: /template
+  description: Template files and examples
