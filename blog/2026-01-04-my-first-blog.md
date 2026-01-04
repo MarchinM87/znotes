@@ -1,19 +1,17 @@
 ---
-title: My First Unreal & C++ Blog
+title: ZNotes
 authors: [Yiyong]
 tags: [C++, Unreal Engine, Simulation]
 ---
 
-今天我开始记录我的第一个博客，我将分享 Unreal Engine 5 与 C++ 的一些基础知识。
+ZNotes is not a blog in the traditional sense.
 
-## 为什么使用 C++ 做游戏引擎
+It is a continuously evolving engineering notebook that documents how real C++ and Unreal Engine systems are designed, structured, and maintained.
 
-C++ 提供了高性能和灵活性，这是游戏引擎开发的核心。
+The content focuses on reusable code frameworks, engine-level patterns, architectural trade-offs, and practical solutions encountered in production-oriented projects.
 
-## Unreal Engine 5 的特点
+Most notes originate from real development scenarios rather than tutorials, and are written with long-term maintainability and clarity in mind.
 
-- 高性能渲染
-- 蓝图系统
-- 开发者可扩展的 C++ API
+If you are looking for quick fixes or copy-paste snippets, this site may not be for you.
 
-这是我的第一篇文章的基础内容。
+If you care about why a system is built in a certain way, how components interact, and where the boundaries should be drawn, you will likely find these notes useful.
