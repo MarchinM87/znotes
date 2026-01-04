@@ -8,6 +8,76 @@
     <subtitle>ZNotes Blog</subtitle>
     <icon>https://marchinm87.github.io/znotes/img/favicon.ico</icon>
     <entry>
+        <title type="html"><![CDATA[CesiumForUnreal Pawn：一次从“动不了”到“可控”的调试心路]]></title>
+        <id>https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes</id>
+        <link href="https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes"/>
+        <updated>2026-01-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[这篇是“按时间线”的记录：我在做 CesiumForUnreal Pawn 时遇到的现象、定位路径、调试手段，以及最后沉淀下来的检查清单。]]></summary>
+        <content type="html"><![CDATA[<p>这篇是“按时间线”的记录：我在做 CesiumForUnreal Pawn 时遇到的现象、定位路径、调试手段，以及最后沉淀下来的检查清单。</p>
+<p>如果你想看更体系化、可长期维护的版本（结构/输入/关键概念/排错清单），对应的 Docs 在这里：<a class="" href="https://marchinm87.github.io/znotes/docs/unreal-engine/cesium-for-unreal-pawn">/docs/unreal-engine/cesium-for-unreal-pawn</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="背景">背景<a href="https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes#%E8%83%8C%E6%99%AF" class="hash-link" aria-label="Direct link to 背景" title="Direct link to 背景" translate="no">​</a></h2>
+<p>目标很简单：做一个可以在 Cesium 全球场景里稳定漫游的 Pawn。</p>
+<p>我预期它至少要满足：</p>
+<ul>
+<li class="">WASD 能移动、鼠标能转向</li>
+<li class="">在离原点很远的位置也不至于明显抖动</li>
+<li class="">后续能接入“按经纬度/高度飞行到目标点”的功能</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="现象symptoms">现象（Symptoms）<a href="https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes#%E7%8E%B0%E8%B1%A1symptoms" class="hash-link" aria-label="Direct link to 现象（Symptoms）" title="Direct link to 现象（Symptoms）" translate="no">​</a></h2>
+<p>最常见的三类“第一天就会撞上”的问题：</p>
+<ol>
+<li class="">Pawn 看起来被生成了，但输入完全不生效</li>
+<li class="">能转向但不能移动（或只能在某个轴动）</li>
+<li class="">在某些高度/距离开始出现明显抖动、穿模或视角跳变</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="我当时的排查顺序">我当时的排查顺序<a href="https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes#%E6%88%91%E5%BD%93%E6%97%B6%E7%9A%84%E6%8E%92%E6%9F%A5%E9%A1%BA%E5%BA%8F" class="hash-link" aria-label="Direct link to 我当时的排查顺序" title="Direct link to 我当时的排查顺序" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-先证明输入有没有进来">1) 先证明：输入有没有进来<a href="https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes#1-%E5%85%88%E8%AF%81%E6%98%8E%E8%BE%93%E5%85%A5%E6%9C%89%E6%B2%A1%E6%9C%89%E8%BF%9B%E6%9D%A5" class="hash-link" aria-label="Direct link to 1) 先证明：输入有没有进来" title="Direct link to 1) 先证明：输入有没有进来" translate="no">​</a></h3>
+<ul>
+<li class="">先不急着怀疑 Cesium：把 Pawn 简化成「不接任何 Cesium 逻辑」的最小骨架</li>
+<li class="">在输入绑定处打日志/断点，确认 Axis/Action 数值在变化</li>
+</ul>
+<p>如果输入没进来：</p>
+<ul>
+<li class="">检查是否被 <code>PlayerController</code> possess</li>
+<li class="">检查 Project Settings / Enhanced Input 的 Mapping 是否真的挂到本地玩家</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-再证明移动是不是被别的逻辑覆盖">2) 再证明：移动是不是被“别的逻辑”覆盖<a href="https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes#2-%E5%86%8D%E8%AF%81%E6%98%8E%E7%A7%BB%E5%8A%A8%E6%98%AF%E4%B8%8D%E6%98%AF%E8%A2%AB%E5%88%AB%E7%9A%84%E9%80%BB%E8%BE%91%E8%A6%86%E7%9B%96" class="hash-link" aria-label="Direct link to 2) 再证明：移动是不是被“别的逻辑”覆盖" title="Direct link to 2) 再证明：移动是不是被“别的逻辑”覆盖" translate="no">​</a></h3>
+<p>当你看到 Pawn “像是动了但又瞬间被拉回去”，通常意味着：</p>
+<ul>
+<li class="">你在某个 Tick/回调里又把 Transform 重置了</li>
+<li class="">或者地理对齐/原点漂移相关逻辑在每帧强行改位置</li>
+</ul>
+<p>做法：临时注释掉所有“设置 Actor Transform”的代码，只保留 <code>AddMovementInput</code> 看行为是否恢复。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-最后处理全球尺度下的抖动精度">3) 最后处理：全球尺度下的抖动/精度<a href="https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes#3-%E6%9C%80%E5%90%8E%E5%A4%84%E7%90%86%E5%85%A8%E7%90%83%E5%B0%BA%E5%BA%A6%E4%B8%8B%E7%9A%84%E6%8A%96%E5%8A%A8%E7%B2%BE%E5%BA%A6" class="hash-link" aria-label="Direct link to 3) 最后处理：全球尺度下的抖动/精度" title="Direct link to 3) 最后处理：全球尺度下的抖动/精度" translate="no">​</a></h3>
+<p>当移动/转向都正常了，再把“抖动”当作一个独立问题来解决：</p>
+<ul>
+<li class="">记录出现抖动时的距离/高度（越远越明显通常是精度）</li>
+<li class="">检查是否存在原点漂移/地理锚定的重复设置</li>
+<li class="">尽量用“增量移动”，避免直接给一个巨大的绝对 UE 世界坐标</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="这次调试留下的-5-个要点">这次调试留下的 5 个要点<a href="https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes#%E8%BF%99%E6%AC%A1%E8%B0%83%E8%AF%95%E7%95%99%E4%B8%8B%E7%9A%84-5-%E4%B8%AA%E8%A6%81%E7%82%B9" class="hash-link" aria-label="Direct link to 这次调试留下的 5 个要点" title="Direct link to 这次调试留下的 5 个要点" translate="no">​</a></h2>
+<ul>
+<li class="">把问题切片：输入 → possess → movement → transform 是否被覆盖 → 精度</li>
+<li class="">先做最小 Pawn 骨架，再逐步接 Cesium 逻辑（一次只加一层复杂度）</li>
+<li class="">任何“每帧设置 Transform”的代码都要特别谨慎</li>
+<li class="">先保证控制路径唯一：Controller 旋转 or Pawn 旋转 or Camera 旋转，不要叠加</li>
+<li class="">写下你的检查清单，并固化到 Docs（方便以后复用/给队友）</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="下一步我打算补充的内容">下一步我打算补充的内容<a href="https://marchinm87.github.io/znotes/blog/cesiumforunreal-pawn-debug-notes#%E4%B8%8B%E4%B8%80%E6%AD%A5%E6%88%91%E6%89%93%E7%AE%97%E8%A1%A5%E5%85%85%E7%9A%84%E5%86%85%E5%AE%B9" class="hash-link" aria-label="Direct link to 下一步我打算补充的内容" title="Direct link to 下一步我打算补充的内容" translate="no">​</a></h2>
+<ul>
+<li class="">一个“飞行速度曲线”（高度越高速度越快）的简单实现</li>
+<li class="">一个“按经纬度/高度飞行到目标点”的接口封装</li>
+<li class="">抖动问题的具体复现场景与修复前后对比</li>
+</ul>]]></content>
+        <author>
+            <name>Yiyong Z</name>
+            <uri>https://github.com/MarchinM87</uri>
+        </author>
+        <category label="Unreal Engine" term="Unreal Engine"/>
+        <category label="UE5" term="UE5"/>
+        <category label="Simulation" term="Simulation"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[ZNotes]]></title>
         <id>https://marchinm87.github.io/znotes/blog/2026/01/04/my-first-blog</id>
         <link href="https://marchinm87.github.io/znotes/blog/2026/01/04/my-first-blog"/>
