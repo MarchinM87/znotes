@@ -8,23 +8,19 @@
     <subtitle>ZNotes Blog</subtitle>
     <icon>https://marchinm87.github.io/znotes/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[My First Unreal & C++ Blog]]></title>
+        <title type="html"><![CDATA[ZNotes]]></title>
         <id>https://marchinm87.github.io/znotes/blog/2026/01/04/my-first-blog</id>
         <link href="https://marchinm87.github.io/znotes/blog/2026/01/04/my-first-blog"/>
         <updated>2026-01-04T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[今天我开始记录我的第一个博客，我将分享 Unreal Engine 5 与 C++ 的一些基础知识。]]></summary>
-        <content type="html"><![CDATA[<p>今天我开始记录我的第一个博客，我将分享 Unreal Engine 5 与 C++ 的一些基础知识。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么使用-c-做游戏引擎">为什么使用 C++ 做游戏引擎<a href="https://marchinm87.github.io/znotes/blog/2026/01/04/my-first-blog#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-c-%E5%81%9A%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E" class="hash-link" aria-label="Direct link to 为什么使用 C++ 做游戏引擎" title="Direct link to 为什么使用 C++ 做游戏引擎" translate="no">​</a></h2>
-<p>C++ 提供了高性能和灵活性，这是游戏引擎开发的核心。</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="unreal-engine-5-的特点">Unreal Engine 5 的特点<a href="https://marchinm87.github.io/znotes/blog/2026/01/04/my-first-blog#unreal-engine-5-%E7%9A%84%E7%89%B9%E7%82%B9" class="hash-link" aria-label="Direct link to Unreal Engine 5 的特点" title="Direct link to Unreal Engine 5 的特点" translate="no">​</a></h2>
-<ul>
-<li class="">高性能渲染</li>
-<li class="">蓝图系统</li>
-<li class="">开发者可扩展的 C++ API</li>
-</ul>
-<p>这是我的第一篇文章的基础内容。</p>]]></content>
+        <summary type="html"><![CDATA[ZNotes is not a blog in the traditional sense.]]></summary>
+        <content type="html"><![CDATA[<p>ZNotes is not a blog in the traditional sense.</p>
+<p>It is a continuously evolving engineering notebook that documents how real C++ and Unreal Engine systems are designed, structured, and maintained.</p>
+<p>The content focuses on reusable code frameworks, engine-level patterns, architectural trade-offs, and practical solutions encountered in production-oriented projects.</p>
+<p>Most notes originate from real development scenarios rather than tutorials, and are written with long-term maintainability and clarity in mind.</p>
+<p>If you are looking for quick fixes or copy-paste snippets, this site may not be for you.</p>
+<p>If you care about why a system is built in a certain way, how components interact, and where the boundaries should be drawn, you will likely find these notes useful.</p>]]></content>
         <author>
-            <name>MarchinM87</name>
+            <name>Yiyong Z</name>
             <uri>https://github.com/MarchinM87</uri>
         </author>
         <category label="C++" term="C++"/>
