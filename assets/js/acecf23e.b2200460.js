@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_knowledge=globalThis.webpackChunkmy_knowledge||[]).push([[1903],{1912(o){o.exports=JSON.parse('{"blogBasePath":"/znotes/blog","blogTitle":"Blog","authorsListPath":"/znotes/blog/authors"}')}}]);
