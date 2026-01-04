@@ -5,7 +5,7 @@ tags: [unreal-engine, ue5, simulation]
 
 这篇是“长期可维护”的手册页：把 CesiumForUnreal 场景里常见的 Pawn 设计选择、坐标/精度问题、输入与调试重点整理成一个可复用的参考。
 
-如果你想看一篇按时间线写的调试心路（“我当时遇到什么问题、怎么定位、怎么验证假设”），看这篇 Blog：[/blog/2026/01/04/cesiumforunreal-pawn-debug-notes](/blog/2026/01/04/cesiumforunreal-pawn-debug-notes)
+如果你想看一篇按时间线写的调试心路（“我当时遇到什么问题、怎么定位、怎么验证假设”），看这篇 Blog：[/blog/cesiumforunreal-pawn-debug-notes](/blog/cesiumforunreal-pawn-debug-notes)
 
 ## 1. 这类 Pawn 的目标是什么
 
