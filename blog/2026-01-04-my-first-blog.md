@@ -1,6 +1,6 @@
 ---
 title: My First Unreal & C++ Blog
-authors: [hynx]
+authors: [Yiyong]
 tags: [C++, Unreal Engine, Simulation]
 ---
 
