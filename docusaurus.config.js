@@ -23,12 +23,12 @@ const config = {
   url: 'https://marchinm87.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/my-knowledge/',
+  baseUrl: '/znotes/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'MarchinM87', // Usually your GitHub org/user name.
-  projectName: 'my-knowledge', // Usually your repo name.
+  projectName: 'znotes', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
