@@ -1,0 +1,8 @@
+{
+  "label": "代码模式 (Code Patterns)",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "可复用的代码结构和设计模式，用于日常开发和面试准备。"
+  }
+}

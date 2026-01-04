@@ -17,3 +17,38 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+cpp:
+  label: C++
+  permalink: /cpp
+  description: C++ programming language
+
+unreal-engine:
+  label: Unreal Engine
+  permalink: /unreal-engine
+  description: Unreal Engine game development
+
+design-pattern:
+  label: Design Pattern
+  permalink: /design-pattern
+  description: Software design patterns
+
+interview:
+  label: Interview
+  permalink: /interview
+  description: Interview preparation
+
+memory:
+  label: Memory Management
+  permalink: /memory
+  description: Memory management and optimization
+
+architecture:
+  label: Architecture
+  permalink: /architecture
+  description: Software architecture patterns
+
+simulation:
+  label: Simulation
+  permalink: /simulation
+  description: Simulation systems and techniques
